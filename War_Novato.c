@@ -9,7 +9,7 @@ typedef struct {
 } Territorio;
 
 int main() {
-    Territorio territorios[5];  // Vetor estático com 5 territórios
+    Territorio territorios[5];
     int i;
 
     printf("=== Cadastro de Territórios - Desafio WAR (Nível Novato) ===\n\n");
