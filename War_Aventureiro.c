@@ -3,14 +3,14 @@
 #include <string.h>
 #include <time.h>
 
-// Definição da struct Territorio
+
 typedef struct {
     char nome[50];
     char corExercito[30];
     int numeroTropas;
 } Territorio;
 
-// Função para cadastrar os territórios
+
 void cadastrarTerritorios(Territorio *territorios, int n) {
     for (int i = 0; i < n; i++) {
         printf("=== Cadastro do Território %d ===\n", i + 1);
@@ -25,13 +25,12 @@ void cadastrarTerritorios(Territorio *territorios, int n) {
 
         printf("Número de tropas: ");
         scanf("%d", &territorios[i].numeroTropas);
-        getchar(); // limpa o buffer do '\n'
+        getchar(); 
 
         printf("\n");
     }
 }
 
-// Função para exibir o estado atual do mapa
 void exibirMapa(Territorio *territorios, int n) {
     printf("\n=== Estado Atual do Mapa ===\n");
     for (int i = 0; i < n; i++) {
@@ -43,7 +42,6 @@ void exibirMapa(Territorio *territorios, int n) {
     printf("\n");
 }
 
-// Função que simula uma batalha entre dois territórios
 void batalhar(Territorio *atacante, Territorio *defensor) {
     if (atacante->numeroTropas <= 1) {
         printf("\n❌ %s não tem tropas suficientes para atacar!\n", atacante->nome);
@@ -81,7 +79,7 @@ int main() {
     int n = 5;
     int opcao, atacante, defensor;
 
-    // Alocação dinâmica dos territórios
+
     Territorio *territorios = (Territorio *)calloc(n, sizeof(Territorio));
     if (territorios == NULL) {
         printf("Erro ao alocar memória!\n");
@@ -121,7 +119,7 @@ int main() {
     printf("\n🕹️ Fim das batalhas! Estado final do mapa:\n");
     exibirMapa(territorios, n);
 
-    // Libera a memória alocada
+ 
     free(territorios);
 
     return 0;
